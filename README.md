@@ -2,8 +2,8 @@
 
 ![GitHub](https://img.shields.io/github/license/CarverCounty/SPSiteContentsList?style=for-the-badge)
 ![GitHub file size in bytes](https://img.shields.io/github/size/CarverCounty/SPSiteContentsList/SiteContents.html?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/CarverCounty/SPSiteContentsList?style=for-the-badge)
 ![GitHub Release Date](https://img.shields.io/github/release-date/CarverCounty/SPSiteContentsList?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/CarverCounty/SPSiteContentsList?style=for-the-badge)
 
 This is a simple solution for screen scraping the lists, libaries, and subsites from a SharePoint 2013<sup>[1](#1)</sup> Site Contents page.<br>This comes in handy for extracting a list of a site's contents and metadata for cleanup purposes.<br>It can be used by any user with access to upload files.<sup>[2](#2)</sup>
 
@@ -12,7 +12,7 @@ This is a simple solution for screen scraping the lists, libaries, and subsites 
 
 This four step process is the simplest deployment, but it will not include your branding or navigation.<br>If that's something you'd like, please use the [Alternate Deployment](#alternate-deployment) instructions below.
 
-1. Download the [SiteContents.html](https://raw.githubusercontent.com/CarverCounty/SPSiteContentsList/master/SiteContents.html) file.<sup>[3](#3)</sup>
+1. Download the [SiteContents.html](https://github.com/CarverCounty/SPSiteContentsList/releases/latest) file.<sup>[3](#3)</sup>
 
 2. Upload the file to a library, like SiteAssets, within your SharePoint Farm.
 
@@ -23,7 +23,7 @@ This four step process is the simplest deployment, but it will not include your 
 
 ### Alternate Deployment
 
-1. Download the [SiteContents.html](https://raw.githubusercontent.com/CarverCounty/SPSiteContentsList/master/SiteContents.html) file.<sup>[3](#3)</sup>
+1. Download the [SiteContents.html](https://github.com/CarverCounty/SPSiteContentsList/releases/latest) file.<sup>[3](#3)</sup>
 
 2. Upload the file to a library, like SiteAssets, at the __root of the site collection__.<sup>[5](#5)</sup>
 
@@ -55,7 +55,7 @@ _<sup><a name='1'>1</a></sup>This has only been tested on SharePoint 2013 using 
 
 _<sup><a name='2'>2</a></sup>The results are permission trimmed, meaning you will only see what you have access to see in the results._
 
-_<sup><a name='3'>3</a></sup>To 'download' the script, you'll need to copy the script text and paste it into a new text file saved as a `.html` extension._
+_<sup><a name='3'>3</a></sup>To download the script, click the SiteContents.html link on the [latest release](https://github.com/CarverCounty/SPSiteContentsList/releases/latest)._
 
 _<sup><a name='4'>4</a></sup>For the Submit button to work on the current site, the script or page must be saved to the root of a document library. It cannot be placed in a folder._
 
