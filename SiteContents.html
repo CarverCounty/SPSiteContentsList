@@ -5,7 +5,8 @@
 	Link: https://github.com/CarverCounty/SPSiteContentsList
 	Auth: Carver County
 -->
-<!-- Label, text field, submit button, and Copy to Clipboard button -->
+<!-- Upgrade div container, textbox label, site path textbox, submit button, and Copy to Clipboard button -->
+<div id='checkVersion'></div>
 <label for='sitePath'>Site Path </label>
 <input type='text' id='sitePath' style='width:500px;' placeholder='Leave blank for current site'><br><br>
 <button onclick='querySite($(sitePath).val()); return false;' style='margin-left:0px!important;'>Submit</button>
@@ -19,6 +20,24 @@
 
 <!-- JavaScript -->
 <script>
+
+	/* When page has been successfully loaded... */
+	$(document).ready(function(){
+
+		/* Variable to hold the current version number */
+		var thisVersion = 'v1.0.1';
+
+		/* Query the latest releases page on GitHub */
+		$.get('https://api.github.com/repos/CarverCounty/SPSiteContentsList/releases/latest', function(data){
+			
+			/* Store latest release version number in variable */
+			var latestRelease = data.tag_name;
+			
+			/* If current version not equal to latest release version, display New Version message on page */
+			if(latestRelease != thisVersion) $('#checkVersion').html('<a href="https://github.com/CarverCounty/SPSiteContentsList/releases/latest" target="_blank">New Version Available</a><br>');
+		});
+	});
+
 	/* Function to be called when Submit button is clicked */
 	function querySite(site){
 
@@ -44,7 +63,7 @@
 			site = 'CURRENT';
 		}
 		
-		/* Create Site itle and link to Site Contents */
+		/* Create Site title and link to Site Contents */
 		$('#siteContentsResults').append('<strong>SITE:</strong> <a href="' + path + '" target="_blank" title="Site Contents">' + site + '</a><br><br>');
 
 		/* Declare string variable to hold list of results */
