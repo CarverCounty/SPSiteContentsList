@@ -34,14 +34,24 @@
 		/* Variable to hold the current version number */
 		var thisVersion = 'v1.0.1';
 
-		/* Query the latest releases page on GitHub */
-		$.get('https://api.github.com/repos/CarverCounty/SPSiteContentsList/releases/latest', function(data){
+		/* Path to GitHub Latest Release */
+		var releasePath = '/CarverCounty/SPSiteContentsList/releases/latest';
+
+		/* Query the latest releases on GitHub */
+		$.get('https://api.github.com/repos' + releasePath, function(data){
 			
 			/* Store latest release version number in variable */
 			var latestRelease = data.tag_name;
 			
-			/* If current version not equal to latest release version, display New Version message on page */
-			if(latestRelease != thisVersion) $('#checkVersion').html('<a href="https://github.com/CarverCounty/SPSiteContentsList/releases/latest" target="_blank">New Version Available</a><br>');
+			/* If current version less than latest release version, display New Version message on page */
+			if(latestRelease > thisVersion) {
+				$('#checkVersion').html('<p style="font-weight:bold;"><a href="https://github.com' + releasePath + '" target="_blank">New Version Available (' + latestRelease + ')</a></p>');
+
+			/* Else If current version greater than latest release version, display Beta Version message on page */
+			} else if(latestRelease < thisVersion) {
+				$('#checkVersion').html('<p><strong style="color:red;">BETA VERSION (' + thisVersion + ')</strong> - This version is not a <a href="https://github.com' + releasePath + '" target="_blank">supported release</a>.</p>');
+			}
+		});
 		});
 	});
 
