@@ -10,6 +10,7 @@
 <label for='sitePath'>Site Path</label><br>
 <input type='text' id='sitePath' style='width:500px;' placeholder='Leave blank for current site'><br><br>
 <button 
+	id='Submit' 
 	onclick='querySite($(sitePath).val()); return false;' 
 	style='margin: 0 20px 10px 0!important;'>Submit
 </button>
@@ -52,6 +53,19 @@
 				$('#checkVersion').html('<p><strong style="color:red;">BETA VERSION (' + thisVersion + ')</strong> - This version is not a <a href="https://github.com' + releasePath + '" target="_blank">supported release</a>.</p>');
 			}
 		});
+		
+		/* When a key is pressed on the keyboard while the cursor is in the sitePath textbox... */
+		$('input#sitePath').keypress(function(e){
+
+			/* If the key pressed is the Enter key */
+			if(e.keyCode == 13){
+
+				/* Prevent the page from reloading */
+				e.preventDefault();
+
+				/* Click the Submit button */
+				$('#Submit').click();
+			}
 		});
 	});
 
