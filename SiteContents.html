@@ -7,16 +7,23 @@
 -->
 <!-- Upgrade div container, textbox label, site path textbox, submit button, and Copy to Clipboard button -->
 <div id='checkVersion'></div>
-<label for='sitePath'>Site Path </label>
+<label for='sitePath'>Site Path</label><br>
 <input type='text' id='sitePath' style='width:500px;' placeholder='Leave blank for current site'><br><br>
-<button onclick='querySite($(sitePath).val()); return false;' style='margin-left:0px!important;'>Submit</button>
-<button onclick='copyToClipboard(document.getElementById("siteContentsResults")); return false;' style='margin-left:0px!important;'>Copy to Clipboard</button><br><hr>
+<button 
+	onclick='querySite($(sitePath).val()); return false;' 
+	style='margin: 0 20px 10px 0!important;'>Submit
+</button>
+<button 
+	onclick='copyToClipboard(document.getElementById("siteContentsResults")); return false;' 
+	style='margin: 0 20px 10px 0!important;'>Copy to Clipboard
+</button><br>
+<hr>
 
 <!-- HTML object where the Site Contents will be displayed -->
 <div id='siteContentsResults'></div>
 
 <!-- Import jQuery -->
-<script src='//code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='//code.jquery.com/jquery-3.4.1.min.js'></script>
 
 <!-- JavaScript -->
 <script>
@@ -49,8 +56,6 @@
 			return;
 		}
 
-		/* Clear page content */
-		$('#siteContentsResults').html('');
 
 		/* If text in textbox exists, append Site Contents path */
 		if(site){path = site + '/_layouts/15/viewlsts.aspx';}
@@ -64,7 +69,7 @@
 		}
 		
 		/* Create Site title and link to Site Contents */
-		$('#siteContentsResults').append('<strong>SITE:</strong> <a href="' + path + '" target="_blank" title="Site Contents">' + site + '</a><br><br>');
+		$('#siteContentsResults').html('<strong>SITE:</strong> <a href="' + path + '" target="_blank" title="Site Contents">' + site + '</a><br><br>');
 
 		/* Declare string variable to hold list of results */
 		var results = '';

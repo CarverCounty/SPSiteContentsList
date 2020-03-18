@@ -4,6 +4,7 @@
 ![GitHub file size in bytes](https://img.shields.io/github/size/CarverCounty/SPSiteContentsList/SiteContents.html?style=for-the-badge)
 ![GitHub Release Date](https://img.shields.io/github/release-date/CarverCounty/SPSiteContentsList?style=for-the-badge)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/CarverCounty/SPSiteContentsList?style=for-the-badge)
+![GitHub All Releases](https://img.shields.io/github/downloads/CarverCounty/SPSiteContentsList/total?style=for-the-badge)
 
 This is a simple solution for screen scraping the lists, libaries, and subsites from a SharePoint 2013<sup>[1](#1)</sup> Site Contents page.<br>This comes in handy for extracting a list of a site's contents and metadata for cleanup purposes.<br>It can be used by any user with access to upload files.<sup>[2](#2)</sup>
 
@@ -67,8 +68,3 @@ _<sup><a name='6'>6</a></sup>This script will not work on a page that uses ```_l
 ## License
 
 This project uses the following license: [Unlicense](LICENSE).
-
-
-## Disclaimer
-
-We provide no guarantee of any kind this script will be kept up to date, nor do we guarantee support of any kind to make it work in any environment other than our own.
