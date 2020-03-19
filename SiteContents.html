@@ -18,6 +18,12 @@
 	onclick='copyToClipboard(document.getElementById("siteContentsResults")); return false;' 
 	style='margin: 0 20px 10px 0!important;'>Copy to Clipboard
 </button><br>
+<span id='resizeText' style='display:none;' title='Resize the results text'>
+	Text Size:&nbsp;&nbsp;&nbsp;
+	<span id='small' style='font-size:small;cursor:pointer;'>T</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span id='medium' style='font-size:large;cursor:pointer;'>T</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span id='large' style='font-size:x-large;cursor:pointer;'>T</span>
+</span>
 <hr>
 
 <!-- HTML object where the Site Contents will be displayed -->
@@ -67,10 +73,19 @@
 				$('#Submit').click();
 			}
 		});
+
+		/* Resize the results list text based on text size selection */
+		$('#small').click(function(){$('#siteContentsResults, #siteContentsResults li span').css({'font-size':'small'});});
+		$('#medium').click(function(){$('#siteContentsResults, #siteContentsResults li span').css({'font-size':'large'});});
+		$('#large').click(function(){$('#siteContentsResults, #siteContentsResults li span').css({'font-size':'x-large'});});
+		
 	});
 
 	/* Function to be called when Submit button is clicked */
 	function querySite(site){
+
+		/* Show Resize Text section */
+		$('#resizeText').css({'display':'inline'});
 
 		/* If text in textbox contains full path to homepage in Site Pages... */
 		if(site && site.substr(site.length - 20).toLowerCase() == '/sitepages/home.aspx') {
@@ -135,7 +150,7 @@
 				var objName = '<a href=\'' + linkData.prop('href') + '\' target=\'_blank\'>' + linkData.text().trim() + '</a> - ';
 
 				/* Create and format the list item */
-				results += '<li>' + objName + metaData[0].innerHTML.trim() + ' - ' + metaData[1].innerHTML.trim().replace('Modified','') + '</li>';
+				results += '<li><span>' + objName + metaData[0].innerHTML.trim() + ' - ' + metaData[1].innerHTML.trim().replace('Modified','') + '</span></li>';
 			});
 
 			/* If results exist, write Lists & Libraries title and results to page */
@@ -148,7 +163,7 @@
 			$('.ms-itmhover .ms-vb-icon a:not(.ms-vl-siteicon)',siteContentsHTML).each(function(){
 
 				/* Build and format the list item */
-				results += '<li><a href=\'' + $(this).prop('href') + '\' target=\'_blank\'>' + $(this).text().trim() + '</a></li>';
+				results += '<li><span><a href=\'' + $(this).prop('href') + '\' target=\'_blank\'>' + $(this).text().trim() + '</a></span></li>';
 			});
 
 			/* If results exist, write Sites title and results to page */
