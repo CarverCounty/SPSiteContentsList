@@ -72,17 +72,32 @@
 	/* Function to be called when Submit button is clicked */
 	function querySite(site){
 
-		/* If text in textbox exists and last four characters equal 'aspx' */
-		if(site && site.substr(site.length - 4) == 'aspx'){
+		/* If text in textbox contains full path to homepage in Site Pages... */
+		if(site && site.substr(site.length - 20).toLowerCase() == '/sitepages/home.aspx') {
 		
-			/* Write message to page and exit function */
+			/* Replace homepage path with Site Contents path */
+			path = site.replace(site.substr(site.length - 20),'') + '/_layouts/15/viewlsts.aspx';
+
+		/* Else If text in textbox contains full path to homepage in Pages... */
+		} else if(site && site.substr(site.length - 16).toLowerCase() == '/pages/home.aspx') {
+		
+			/* Replace homepage path with Site Contents path */
+			path = site.replace(site.substr(site.length - 16),'') + '/_layouts/15/viewlsts.aspx';
+		
+		/* Else If text in textbox exists and last four characters equal 'aspx'... */
+		} else if(site && site.substr(site.length - 4).toLowerCase() == 'aspx'){
+		
+			/* Write error message to page */
 			$('#siteContentsResults').html('The site path is invalid.<br>Please ensure the path ends with the site name.');
+
+			/* Exit function */
 			return;
-		}
-
-
-		/* If text in textbox exists, append Site Contents path */
-		if(site){path = site + '/_layouts/15/viewlsts.aspx';}
+			
+		/* Else If text in textbox exists... */
+		} else if(site){
+			
+			/* Append Site Contents path to site */
+			path = site + '/_layouts/15/viewlsts.aspx';}
 
 		/* Else, if textbox is blank... */
 		else{
