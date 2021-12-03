@@ -1,10 +1,10 @@
 # SharePoint Site Contents List
 
-![GitHub](https://img.shields.io/github/license/CarverCounty/SPSiteContentsList?style=for-the-badge)
-![GitHub file size in bytes](https://img.shields.io/github/size/CarverCounty/SPSiteContentsList/SiteContents.html?style=for-the-badge)
-![GitHub Release Date](https://img.shields.io/github/release-date/CarverCounty/SPSiteContentsList?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/CarverCounty/SPSiteContentsList?style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/CarverCounty/SPSiteContentsList/total?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/CarverCounty/SPSiteContentsList?style=for-the-badge "License")
+![GitHub file size in bytes](https://img.shields.io/github/size/CarverCounty/SPSiteContentsList/SiteContents.html?style=for-the-badge "File Size")
+![GitHub Release Date](https://img.shields.io/github/release-date/CarverCounty/SPSiteContentsList?style=for-the-badge "Release Date")
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/CarverCounty/SPSiteContentsList?style=for-the-badge "Release Version")
+![GitHub All Releases](https://img.shields.io/github/downloads/CarverCounty/SPSiteContentsList/total?style=for-the-badge "Downloads")
 
 This is a simple solution for screen scraping the lists, libaries, and subsites from a SharePoint 2013<sup>[1](#1)</sup> Site Contents page.<br>This comes in handy for extracting a list of a site's contents and metadata for cleanup purposes.<br>It can be used by any user with access to upload files.<sup>[2](#2)</sup>
 
@@ -60,9 +60,9 @@ _<sup><a name='3'>3</a></sup>To download the script, click the SiteContents.html
 
 _<sup><a name='4'>4</a></sup>For the Submit button to work on the current site, the script or page must be saved to the root of a document library. It cannot be placed in a folder._
 
-_<sup><a name='5'>5</a></sup>The script can be uploaded to any individual site. However, by uploading it to the root of the site collection, the script can be referenced on any subsite without needing to upload it to multiple sites. Additionally, should the script need to be modified in the future, it only needs to be changed in one place to be applied to all subsites where it's being used._
+_<sup><a name='5'>5</a></sup>The script can be uploaded to any individual site. However, by uploading it to the root of the site collection, the script can be referenced on any subsite without needing to upload it to multiple sites. Additionally, should the script need to be updated in the future, it only needs to be changed in one place to be applied to all subsites where it's being used._
 
-_<sup><a name='6'>6</a></sup>This script will not work on a page that uses ```_layouts/15/start.aspx#``` in the URL. This happens on site homepages when the Minimal Download Strategy site feature is activated. Simply deactivate this feature, manually modify the URL, or add the webpart to a page other than the homepage._
+_<sup><a name='6'>6</a></sup>This script will not work on a page that uses ```_layouts/15/start.aspx#``` in the URL. This happens on site homepages when the [Minimal Download Strategy](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/minimal-download-strategy-overview) site feature is activated. Simply deactivate this feature, manually modify the URL, or add the webpart to a page other than the homepage._
 
 
 ## License

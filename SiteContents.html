@@ -39,7 +39,7 @@
 	$(document).ready(function(){
 
 		/* Variable to hold the current version number */
-		var thisVersion = 'v1.0.1';
+		var thisVersion = 'v1.1.0';
 
 		/* Path to GitHub Latest Release */
 		var releasePath = '/CarverCounty/SPSiteContentsList/releases/latest';
@@ -50,11 +50,11 @@
 			/* Store latest release version number in variable */
 			var latestRelease = data.tag_name;
 			
-			/* If current version less than latest release version, display New Version message on page */
+			/* If current version is less than latest release version, display new release message on page */
 			if(latestRelease > thisVersion) {
-				$('#checkVersion').html('<p style="font-weight:bold;"><a href="https://github.com' + releasePath + '" target="_blank">New Version Available (' + latestRelease + ')</a></p>');
+				$('#checkVersion').html('<p style="font-weight:bold;">A <a href="https://github.com' + releasePath + '" target="_blank">new release (' + latestRelease + ')</a> is available.</p>');
 
-			/* Else If current version greater than latest release version, display Beta Version message on page */
+			/* Else If current version is greater than latest release version, display Beta Version message on page */
 			} else if(latestRelease < thisVersion) {
 				$('#checkVersion').html('<p><strong style="color:red;">BETA VERSION (' + thisVersion + ')</strong> - This version is not a <a href="https://github.com' + releasePath + '" target="_blank">supported release</a>.</p>');
 			}
